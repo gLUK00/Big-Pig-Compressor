@@ -2,80 +2,88 @@
 
 A file compression and decompression utility written in C++ with both GUI and CLI interfaces.
 
-## Fonctionnalités
+## 🌐 Available Languages
 
--   Interface graphique simple pour la compression et la décompression.
--   Utilisation en ligne de commande pour l'automatisation et les scripts.
--   Sélection de fichiers ou de répertoires pour la compression.
--   Filtre de fichiers pour ne montrer que les archives `.bpig` lors de la décompression.
--   Thème de couleurs personnalisable via un fichier de configuration `config.json`.
+- [English](README.md)
+- [Français](docs/README.fr.md)
+- [Español](docs/README.es.md)
+- [中文](docs/README.zh.md)
+- [العربية](docs/README.ar.md)
 
-## Prérequis
+## Features
 
-Pour compiler et exécuter ce projet, vous aurez besoin de :
+- Simple graphical interface for compression and decompression.
+- Command-line usage for automation and scripting.
+- File or directory selection for compression.
+- File filter to show only `.bpig` archives during decompression.
+- Customizable color theme via a `config.json` file.
 
--   Un compilateur C++ (g++)
--   CMake (version 3.5 ou supérieure)
--   Les bibliothèques de développement Qt5
+## Prerequisites
 
-Sur un système basé sur Debian/Ubuntu (comme Linux Mint), vous pouvez installer toutes les dépendances avec la commande suivante :
+To compile and run this project, you will need:
+
+- A C++ compiler (g++)
+- CMake (version 3.5 or higher)
+- Qt5 development libraries
+
+On a Debian/Ubuntu-based system (like Linux Mint), you can install all dependencies with the following command:
 
 ```bash
 sudo apt-get update && sudo apt-get install -y build-essential cmake qtbase5-dev
 ```
 
-## Compilation depuis les sources
+## Building from Source
 
-1.  Clonez le dépôt (si ce n'est pas déjà fait).
-2.  Créez un répertoire de build et naviguez à l'intérieur :
+1. Clone the repository (if not already done).
+2. Create a build directory and navigate into it:
 
     ```bash
     mkdir build
     cd build
     ```
 
-3.  Lancez CMake pour configurer le projet, puis compilez avec make :
+3. Run CMake to configure the project, then compile with make:
 
     ```bash
     cmake ..
     make
     ```
 
-L'exécutable `BigPigCompressor` sera créé dans le répertoire `build`.
+The `BigPigCompressor` executable will be created in the `build` directory.
 
-## Utilisation
+## Usage
 
-### Mode Graphique (GUI)
+### GUI Mode
 
-Pour lancer l'application avec son interface graphique, exécutez le programme sans arguments depuis le répertoire `build` :
+To launch the application with its graphical interface, run the program without arguments from the `build` directory:
 
 ```bash
 ./BigPigCompressor
 ```
 
-L'interface vous permettra de choisir entre la compression et la décompression, de sélectionner les fichiers/répertoires et de lancer les opérations.
+The interface will allow you to choose between compression and decompression, select files/directories, and start the operations.
 
-### Mode Ligne de Commande (CLI)
+### Command-Line (CLI) Mode
 
-L'application peut aussi être utilisée directement depuis votre terminal.
+The application can also be used directly from your terminal.
 
-**Pour compresser un fichier ou un répertoire :**
+**To compress a file or directory:**
 
 ```bash
-./build/BigPigCompressor --compress /chemin/vers/votre/fichier
+./build/BigPigCompressor --compress /path/to/your/file
 ```
 
-**Pour décompresser une archive `.bpig` :**
+**To decompress a `.bpig` archive:**
 
 ```bash
-./build/BigPigCompressor --decompress /chemin/vers/votre/archive.bpig
+./build/BigPigCompressor --decompress /path/to/your/archive.bpig
 ```
 
 ## Configuration
 
-L'apparence de l'application peut être personnalisée en modifiant le fichier `config.json` situé à la racine du projet. Ce fichier contrôle les couleurs de l'interface.
+The application's appearance can be customized by editing the `config.json` file located at the project root. This file controls the interface colors.
 
-Exemple de `config.json` :
+Example `config.json`:
 
 ```json
 {
@@ -86,10 +94,10 @@ Exemple de `config.json` :
 }
 ```
 
-## Développement avec VS Code
+## Development with VS Code
 
-Le projet inclut des configurations pour Visual Studio Code (`.vscode/launch.json` et `.vscode/tasks.json`).
+The project includes configurations for Visual Studio Code (`.vscode/launch.json` and `.vscode/tasks.json`).
 
-1.  Ouvrez le dossier du projet dans VS Code.
-2.  Allez dans l'onglet "Exécuter et déboguer" (`Ctrl+Maj+D`).
-3.  Choisissez une configuration de lancement (GUI, Compress CLI, ou Decompress CLI) dans le menu déroulant et appuyez sur `F5` pour compiler et lancer.
+1. Open the project folder in VS Code.
+2. Go to the "Run and Debug" tab (`Ctrl+Shift+D`).
+3. Choose a launch configuration (GUI, Compress CLI, or Decompress CLI) from the dropdown menu and press `F5` to compile and run.
