@@ -1,55 +1,95 @@
 # Big Pig Compressor
 
-A file compression and decompression utility written in Rust with both GUI and CLI interfaces.
+A file compression and decompression utility written in C++ with both GUI and CLI interfaces.
 
-## Features
+## Fonctionnalités
 
-- Compress files and directories with a simple GUI interface
-- Decompress .bpig files easily
-- Use from the command line for automation
-- Customizable color theme through configuration
+-   Interface graphique simple pour la compression et la décompression.
+-   Utilisation en ligne de commande pour l'automatisation et les scripts.
+-   Sélection de fichiers ou de répertoires pour la compression.
+-   Filtre de fichiers pour ne montrer que les archives `.bpig` lors de la décompression.
+-   Thème de couleurs personnalisable via un fichier de configuration `config.json`.
 
-## Usage
+## Prérequis
 
-### GUI Mode
+Pour compiler et exécuter ce projet, vous aurez besoin de :
 
-Run the application without any arguments to launch the GUI:
+-   Un compilateur C++ (g++)
+-   CMake (version 3.5 ou supérieure)
+-   Les bibliothèques de développement Qt5
+
+Sur un système basé sur Debian/Ubuntu (comme Linux Mint), vous pouvez installer toutes les dépendances avec la commande suivante :
 
 ```bash
-./bpigc
+sudo apt-get update && sudo apt-get install -y build-essential cmake qtbase5-dev
 ```
 
-The GUI offers two main options:
-1. **Compress** - Select a file or directory to compress
-2. **Decompress** - Select a .bpig file to decompress
+## Compilation depuis les sources
 
-### CLI Mode
+1.  Clonez le dépôt (si ce n'est pas déjà fait).
+2.  Créez un répertoire de build et naviguez à l'intérieur :
 
-Compress a file or directory:
+    ```bash
+    mkdir build
+    cd build
+    ```
+
+3.  Lancez CMake pour configurer le projet, puis compilez avec make :
+
+    ```bash
+    cmake ..
+    make
+    ```
+
+L'exécutable `BigPigCompressor` sera créé dans le répertoire `build`.
+
+## Utilisation
+
+### Mode Graphique (GUI)
+
+Pour lancer l'application avec son interface graphique, exécutez le programme sans arguments depuis le répertoire `build` :
 
 ```bash
-./bpigc compress /path/to/file_or_directory [-o /path/to/output.bpig]
+./BigPigCompressor
 ```
 
-Decompress a .bpig file:
+L'interface vous permettra de choisir entre la compression et la décompression, de sélectionner les fichiers/répertoires et de lancer les opérations.
+
+### Mode Ligne de Commande (CLI)
+
+L'application peut aussi être utilisée directement depuis votre terminal.
+
+**Pour compresser un fichier ou un répertoire :**
 
 ```bash
-./bpigc decompress /path/to/archive.bpig [-o /path/to/output_directory]
+./build/BigPigCompressor --compress /chemin/vers/votre/fichier
+```
+
+**Pour décompresser une archive `.bpig` :**
+
+```bash
+./build/BigPigCompressor --decompress /chemin/vers/votre/archive.bpig
 ```
 
 ## Configuration
 
-The application uses a configuration file located at `~/.config/big-pig-compressor/config.json` to store theme preferences. The default theme uses pink colors, but you can customize it by editing this file.
+L'apparence de l'application peut être personnalisée en modifiant le fichier `config.json` situé à la racine du projet. Ce fichier contrôle les couleurs de l'interface.
 
-## Building from Source
+Exemple de `config.json` :
 
-```bash
-cargo build --release
+```json
+{
+    "background-color": "#FFC0CB",
+    "button-color": "#FF69B4",
+    "button-text-color": "#FFFFFF",
+    "text-color": "#1E1E1E"
+}
 ```
 
-The compiled binary will be available at `target/release/bpigc`.
+## Développement avec VS Code
 
-## License
+Le projet inclut des configurations pour Visual Studio Code (`.vscode/launch.json` et `.vscode/tasks.json`).
 
-See the [LICENSE](LICENSE) file for details.
-Compression software for pot-bellied pigs
+1.  Ouvrez le dossier du projet dans VS Code.
+2.  Allez dans l'onglet "Exécuter et déboguer" (`Ctrl+Maj+D`).
+3.  Choisissez une configuration de lancement (GUI, Compress CLI, ou Decompress CLI) dans le menu déroulant et appuyez sur `F5` pour compiler et lancer.
