@@ -1,0 +1,4 @@
+/home/hidalgo/Documents/projects/Big-Pig-Compressor/build/CMakeFiles/BigPigCompressor.dir
+/home/hidalgo/Documents/projects/Big-Pig-Compressor/build/CMakeFiles/edit_cache.dir
+/home/hidalgo/Documents/projects/Big-Pig-Compressor/build/CMakeFiles/rebuild_cache.dir
+/home/hidalgo/Documents/projects/Big-Pig-Compressor/build/CMakeFiles/BigPigCompressor_autogen.dir
